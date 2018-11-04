@@ -1,0 +1,20 @@
+.layui-breadcrumb a{
+    color: #000!important;
+}
+
+.article-flag{
+    margin: -8px 0;
+    line-height: 20px;
+    padding: 5px;
+    border: 1px solid;
+    height: 20px;
+    width: 35px;
+    color: white;
+    border-radius: 2px;
+}
+.yc{
+    background-color: #20b1a0;
+}
+.article-content{
+    margin-top: 15px;
+}

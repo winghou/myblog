@@ -344,6 +344,9 @@ article:hover{
 .info-list li{
     padding: 5px 0;
 }
+.info-list span{
+    color: #000;
+}
 /*-----------------------------------------blog info css-*/
 /*-----------------------------------------footer*/
 .footer-info{
@@ -351,5 +354,6 @@ article:hover{
     box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.03);
     min-height: 30px;
     line-height: 30px;
+    margin-bottom: 0!important;
 }
 /*-----------------------------------------footer*/
