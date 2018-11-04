@@ -1,4 +1,7 @@
 /*Common*/
+.text-center{
+    text-align: center;
+}
 .border-gray{
     border:1px solid #c2c2c2;
 }
@@ -111,7 +114,6 @@
     width: auto;
     vertical-align: middle;
 }
-/*blog header End*/
 
 .blog-banner{
     background: #fff;
@@ -122,6 +124,7 @@
     padding: 0 0 0 10px;
 
 }
+/*blog header End*/
 .blog-banner a:hover{
     color: #007769;
 }
@@ -342,3 +345,11 @@ article:hover{
     padding: 5px 0;
 }
 /*-----------------------------------------blog info css-*/
+/*-----------------------------------------footer*/
+.footer-info{
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.03);
+    min-height: 30px;
+    line-height: 30px;
+}
+/*-----------------------------------------footer*/
