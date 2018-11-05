@@ -1,4 +1,18 @@
 /*Common*/
+.hr{
+    margin: 15px 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #e2e2e2;
+    position: relative;
+}
+.hr span{
+    position: absolute;
+    background-color: white;
+    bottom: -8px;
+    color: #006741;
+
+}
 .text-center{
     text-align: center;
 }

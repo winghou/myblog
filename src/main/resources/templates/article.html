@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="../static/css/common/header.css">
     <link rel="stylesheet" href="../static/css/common/footer.css">
     <link rel="stylesheet" href="../static/css/article.css">
+    <!--<link rel="stylesheet" href="../static/plugin/simpleMDE/simplemde.min.css">-->
     <script src="../static/plugin/layui/layui.js"></script>
-    <script src="../static/plugin/marked.min.js"></script>
+    <script src="../static/plugin/marked/marked.min.js"></script>
+    <!--<link rel="stylesheet" href="../static/plugin/simpleMDE/simplemde.min.js">-->
     <title>Article</title>
 
 </head>
@@ -77,36 +79,32 @@
                     <div class="layui-clear"></div>
                 </div>
                 <div class="article-content" id="content">
-                    Marked Demo
-                    ======================
 
-                    这是一个Marked库使用的例子。 http://blog.fens.me/nodejs-markdown-marked/
+                </div>
+                <div class="hr text-center">
+                    <span>正文结束</span>
+                </div>
+                <div class="article-foot text-center">
+                    <span class="like">
+                        <a href="#like"><i class="fa fa-thumbs-up"></i>&nbsp; 赞</a>
+                    </span>
 
-                    > A full-featured markdown parser and compiler, written in JavaScript. Built
-                    > for speed.
+                        <span class="reward">
+                            <span class="reward-empty"></span>
+                            <span></span>
+                            <a href="#reward" class="layui-circle">赏</a>
+                        </span>
+                    <span class="share">
+                        <a href="#share"><i class="fa fa-share-alt"></i>&nbsp; 分享</a>
+                    </span>
+                    <div class="layui-clear"></div>
+                </div>
+            </div>
+            <div class="article-footbar">
+                <p>所属分类： &nbsp;<a href="#Java"  style="color: #009a61;font-size: 16px">Java</a></p>
+            </div>
+            <div class="blog-panel">
 
-                    [![NPM version](https://badge.fury.io/js/marked.png)][badge]
-
-                    ## Install
-
-                    ``` bash
-                    npm install marked --save
-                    ```
-
-                    ## 列表测试
-
-                    + 列表测试，行1
-                    + 列表测试，行2
-                    + 列表测试，行3
-                    + 列表测试，行4
-
-                    ## 表格测试
-
-                    A | B | C
-                    --|--|--
-                    A1 | B1 | C1
-                    A2 | B2 | C2
-                    A3 | B3 | C3                </div>
             </div>
         </div>
         <div class="layui-col-lg4">
@@ -126,13 +124,14 @@
     </div>
 </footer>
 <script>
-    layui.use(['element','jquery'], function () {
+    layui.use(['element', 'jquery'], function () {
         var element = layui.element
-            ,$ = layui.$;
-    console.log(marked($('#content').text()));
+            , $ = layui.$;
+        document.getElementById('content').innerHTML =
+            marked('# 文章待填');
+        console.log();
+
     });
-    document.getElementById('content').innerHTML =
-        marked(document.getElementById('content').innerHTML);
 
 </script>
 </body>

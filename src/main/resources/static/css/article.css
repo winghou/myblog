@@ -1,8 +1,8 @@
-.layui-breadcrumb a{
-    color: #000!important;
+.layui-breadcrumb a {
+    color: #000 !important;
 }
 
-.article-flag{
+.article-flag {
     margin: -8px 0;
     line-height: 20px;
     padding: 5px;
@@ -12,9 +12,88 @@
     color: white;
     border-radius: 2px;
 }
-.yc{
+
+.yc {
     background-color: #20b1a0;
 }
-.article-content{
+
+.article-content {
     margin-top: 15px;
+}
+
+.article-foot {
+    margin: 20px 0 ;
+    padding: 10px 0;
+
+}
+
+.article-foot a {
+    position: relative;
+    display: inline-block;
+    min-height: 40px;
+    line-height: 40px;
+    min-width: 40px;
+    color: #777;
+}
+.article-foot a:hover {
+    background: rgba(1, 126, 102, .08) !important;
+    color: #017e66 !important;
+    border-color: rgba(202, 206, 205, .08) !important;
+    transition: all .2s ease-in 0s;
+}
+
+.like a {
+    width: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: none !important;
+}
+
+
+.reward {
+    position: absolute;
+}
+
+.reward span {
+    left: -33px;
+    position: absolute;
+    display: inline-block;
+    height: 80px;
+    width: 61px;
+    top: -15px;
+    z-index: 50;
+    background-color: white;}
+.reward .reward-empty{
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    height: 73px;
+    width: 73px;
+    left: -40px;
+
+
+}
+.reward a {
+    background-color: white;
+    top: -8px;
+    left: -31px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 55px;
+    line-height: 55px;
+    width: 55px;
+    z-index: 100;
+}
+
+.share a {
+    width: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: none !important;
+}
+.article-footbar{
+    background-color: #f8f8f8;
+    margin-top: -30px;
+    ;
+
+}
+.article-footbar p{
+    padding: 10px ;
 }
