@@ -95,5 +95,26 @@
 
 }
 .article-footbar p{
-    padding: 10px ;
+    padding: 7px ;
+}
+.article-tag p{
+    color: #777777;
+}
+.article-tag a{
+    display: inline-block;
+    padding: 3px 5px;
+    margin: 0 5px 3px 0;
+    background-color: #ebf5f3;
+    color: #009a61;
+
+}
+.article-tag a:hover{
+    background-color: #009a61;
+    color: #ffffff;
+}
+.meta-nav a{
+    display: inline-block;
+    color: #009a61;
+    width:49%;
+
 }
