@@ -1,7 +1,9 @@
 /*Common*/
 .link-green:hover{
     color: #009a61;
-
+}
+.text-green{
+    color: #009a61;
 }
 .panel-title .h5 {
     font-size: 16px;
@@ -70,3 +72,48 @@
 }
 
 /*Common End*/
+
+/*---------------------------------------blog tag css -*/
+.blog-tag{
+
+
+}
+.tag-content a{
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0 10px;
+    line-height: 25px;
+    margin: 0 10px 10px 0;
+}
+.tag-content a:hover{
+    color: #fff;
+    background-color: #20b1a0;
+    transition: .3s ease;
+}
+/*---------------------------------------blog tag css -*/
+
+/*-----------------------------------------article list*/
+.article-list{
+    padding: 0 15px!important;
+}
+.article-list a{
+    display: block;
+    line-height: 28px;
+    margin: 5px 0;
+}
+.article-list a:hover{
+    color: #009688;
+}
+/*-----------------------------------------article list*/
+
+/*-----------------------------------------blog info css-*/
+.info-list{
+    padding: 0 7px;
+}
+.info-list li{
+    padding: 5px 0;
+}
+.info-list span{
+    color: #000;
+}
+/*-----------------------------------------blog info css-*/
