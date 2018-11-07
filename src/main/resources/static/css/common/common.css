@@ -117,3 +117,28 @@
     color: #000;
 }
 /*-----------------------------------------blog info css-*/
+/*-------------------------------------------layui tab overwrite css*/
+.blog-panel .layui-tab{
+    margin-top: 0!important;
+}
+.blog-panel .layui-tab-title{
+    border: none!important;
+
+}
+.blog-panel .layui-tab-title li{
+    padding: 0!important;
+    width: 33% !important;
+    background-color: #F8F8F8!important;
+    border: 1px solid white!important;
+    font-weight: 700;
+}
+.blog-panel .layui-tab-title li:after{
+    border: none!important;
+}
+.blog-panel .layui-tab-title .layui-this{
+    background-color: #fff!important;
+    border: #ffffff!important;
+
+}
+
+/*-------------------------------------------layui tab overwrite css*/

@@ -17,6 +17,7 @@
     <script src="../static/plugin/layui/layui.js"></script>
     <!--<script src="../static/plugin/marked/marked.min.js"></script>-->
     <script src="../static/plugin/simpleMDE/simplemde.min.js"></script>
+    <!--<script src="../static/plugin/jquery.min.js"></script>-->
     <title>Article</title>
 
 </head>
@@ -216,7 +217,7 @@
                 </div>
             </div>
             <div class="blog-panel">
-                <div class="panel-title">
+                <div class="panel-title" id="comment-post">
                     <h5 class="h5">
                         <i class="fa fa-commenting-o"></i>
                         评论
@@ -224,7 +225,7 @@
                     <hr>
                     <form action="/" class="layui-form" id="comment-form">
                         <textarea name="" required placeholder="请输入" class="layui-textarea CodeMirror CodeMirror-scroll"
-                                  id="comment-area" style="height: 300px;">
+                                  id="comment-area">
                         </textarea>
                         <button class="layui-btn layui-btn-fluid" style="margin: 15px 0">提交评论</button>
                     </form>
@@ -260,7 +261,7 @@
                         <hr>
                         <div class="comment-content">test</div>
                         <hr>
-                        <div class="content-meta" style="padding-left: 5px;" >
+                        <div class="content-meta" style="padding-left: 5px;margin-bottom: 10px;">
                             <a href="#">
                                 <i class="fa fa-thumbs-up"></i> 赞(0)
                             </a>
@@ -269,8 +270,9 @@
                                 <i class="fa fa-thumbs-down"></i> 踩(0)
                             </a>
                             <i class="sepa"></i>
-                            <a href="">
+                            <a id="reply-A" class="" style="padding-right: 15px;cursor: pointer;">
                                 <i class="fa fa-reply"></i> 回复
+                                <!--<i class="fa fa-share"></i> 取消回复-->
                             </a>
                         </div>
                     </li>
@@ -445,14 +447,14 @@
 <script>
     layui.use(['element', 'jquery', 'util'], function () {
         var element = layui.element
-            , $ = layui.$
-            , util = layui.util;
+            , util = layui.util,
+            $ = layui.jquery;
 
         //    fixBar
         util.fixbar({
             bgcolor: '#009a61bf'
         });
-
+        //初始化评论框
         var simplemde = new SimpleMDE({
             element: document.getElementById("comment-area"),
             autoDownloadFontAwesome: false,
@@ -460,6 +462,16 @@
             hideIcons: ['heading', 'unordered-list', 'ordered-list', 'link', 'image', 'fullscreen']
             // showIcons: ['bold','italic','code','quote','preview','guide']
         });
+        $('#reply-A').click(function () {
+            var comment_form = $('#comment-form');
+            if (!$(this).hasClass('pull-right')) {
+                $(this).parent().after(comment_form);
+                $(this).addClass('pull-right').html('<i class="fa fa-share"></i> 取消回复');
+            }else {
+                $('#comment-post').after(comment_form);
+                $(this).removeClass('pull-right').html('<i class="fa fa-reply"></i> 回复');
+            }
+        })
 
     });
     // document.getElementById('content').innerHTML =
