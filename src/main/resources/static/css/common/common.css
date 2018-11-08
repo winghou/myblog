@@ -1,10 +1,73 @@
 /*Common*/
-.link-green:hover{
+/*markdown编辑器高度*/
+.CodeMirror, .CodeMirror-scroll {
+    min-height:150px!important;
+}
+/*评论用户头像*/
+.user-img img{
+    float: left;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+
+}
+/*Comment css*/
+.comment-header .user-info{
+    margin-left: 50px;
+}
+.timer{
+    color: #a5a5a5;
+}
+.comment-content{
+    padding-left: 15px;
+}
+.content-meta a{
+    font-size: 13px;
     color: #009a61;
 }
-.text-green{
+.content-meta a:hover{
+    color: #0a5036;
+}
+.content-meta{
+    margin-bottom: 10px;
+}
+.sepa:before{
+    margin: 0 3px;
+    content: "|";
     color: #009a61;
 }
+.content-li{
+    padding: 10px 10px;
+    box-shadow: 3px 3px 3px #ebf1ed;
+    /*box-shadow: 1px 0px 16px 1px #ddd;*/
+}
+code{
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+.blog-banner {
+    background: #fff;
+    margin: 15px 0 10px 0;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 3px;
+    padding: 0 0 0 10px;
+
+}
+
+.link-green:hover {
+    color: #009a61;
+}
+
+.text-green {
+    color: #009a61;
+}
+
 .panel-title .h5 {
     font-size: 16px;
     font-weight: 700;
@@ -74,70 +137,82 @@
 /*Common End*/
 
 /*---------------------------------------blog tag css -*/
-.blog-tag{
-
+.blog-tag {
 
 }
-.tag-content a{
+
+.tag-content a {
     display: inline-block;
     border-radius: 3px;
     padding: 0 10px;
     line-height: 25px;
     margin: 0 10px 10px 0;
 }
-.tag-content a:hover{
+
+.tag-content a:hover {
     color: #fff;
     background-color: #20b1a0;
     transition: .3s ease;
 }
+
 /*---------------------------------------blog tag css -*/
 
 /*-----------------------------------------article list*/
-.article-list{
-    padding: 0 15px!important;
+.article-list {
+    padding: 0 15px !important;
 }
-.article-list a{
+
+.article-list a {
     display: block;
     line-height: 28px;
     margin: 5px 0;
 }
-.article-list a:hover{
+
+.article-list a:hover {
     color: #009688;
 }
+
 /*-----------------------------------------article list*/
 
 /*-----------------------------------------blog info css-*/
-.info-list{
+.info-list {
     padding: 0 7px;
 }
-.info-list li{
+
+.info-list li {
     padding: 5px 0;
 }
-.info-list span{
+
+.info-list span {
     color: #000;
 }
+
 /*-----------------------------------------blog info css-*/
 /*-------------------------------------------layui tab overwrite css*/
-.blog-panel .layui-tab{
-    margin-top: 0!important;
+.blog-panel .layui-tab {
+    margin-top: 0 !important;
 }
-.blog-panel .layui-tab-title{
-    border: none!important;
+
+.blog-panel .layui-tab-title {
+    border: none !important;
 
 }
-.blog-panel .layui-tab-title li{
-    padding: 0!important;
+
+.blog-panel .layui-tab-title li {
+    padding: 0 !important;
     width: 33% !important;
-    background-color: #F8F8F8!important;
-    border: 1px solid white!important;
+    background-color: #F8F8F8 !important;
+    border: 1px solid white !important;
     font-weight: 700;
 }
-.blog-panel .layui-tab-title li:after{
-    border: none!important;
+
+.blog-panel .layui-tab-title li:after {
+    border: none !important;
 }
-.blog-panel .layui-tab-title .layui-this{
-    background-color: #fff!important;
-    border: #ffffff!important;
+
+.blog-panel .layui-tab-title .layui-this {
+    background-color: #fff !important;
+    border: #ffffff !important;
 
 }
 
