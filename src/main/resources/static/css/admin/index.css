@@ -11,7 +11,12 @@
     left: 0;
     background-color: #20222A;/*#16181d*/
 }
-.sidebar h2{
+.sidebar h2,p {
+    display: inline-block;
+    color: rgba(255,255,255,0.8);
+}
+.sidebar h2>a{
+    display: inline-block;
     font-size: 25px;
     color: rgba(255,255,255,0.8);
     margin: 15px 10px;
@@ -22,4 +27,9 @@
 }
 .sidebar>ul a:hover{
     background: none!important;
+}
+.admin-img img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
