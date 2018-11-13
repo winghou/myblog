@@ -1,0 +1,25 @@
+.layui-container{
+    width: 100% !important;
+    padding: 0!important;
+}
+.sidebar{
+    max-width: 230px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #20222A;/*#16181d*/
+}
+.sidebar h2{
+    font-size: 25px;
+    color: rgba(255,255,255,0.8);
+    margin: 15px 10px;
+}
+.sidebar>ul{
+    background-color: #20222A!important;
+    width: 100%;
+}
+.sidebar>ul a:hover{
+    background: none!important;
+}
