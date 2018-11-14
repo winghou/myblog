@@ -51,3 +51,29 @@
     padding: 0 30px 0 45px!important;
 }
 /*-------------------------------sidebar css*/
+
+/*-----------------------------right content css*/
+.right-content{
+    margin-left: -232px;
+}
+/*-----------------------------right content css*/
+.nav-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-menu ul{
+    /*position: absolute;*/
+    /*top: 0;*/
+
+}
+.nav-left{
+    left: 0;
+}
+.nav-right{
+    right: 0;
+}
+.nav-menu ul a{
+    color: #000!important;
+}

@@ -1,4 +1,8 @@
 /*Common*/
+body{
+    background-color: #eee !important;
+    color: #666 !important
+}
 /*markdown编辑器高度*/
 .CodeMirror, .CodeMirror-scroll {
     min-height:150px!important;
@@ -367,4 +371,7 @@
 }
 .mb25{
     margin-bottom: 25px;
+}
+.none{
+    display: none;
 }
