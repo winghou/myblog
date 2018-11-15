@@ -87,7 +87,7 @@
 /*-----------------------------------------main content css*/
 .main-content{
     margin-top: 75px;
-    padding: 0 15px;
+    padding: 0 15px 0 30px;
 }
 .admin-panel{
     background: #fff;
@@ -95,13 +95,15 @@
     /*height: 35px;*/
     /*line-height: 35px;*/
     border-radius: 5px;
-    padding: 0 0 0 10px;
+    padding: 10px 0 0 20px;
     border: 1px solid #E4E4E4;
+    display: block;
 
 }
 .admin-panel:hover{
     box-shadow: -10px 10px 30px -15px #9e9c9c;
     transition: all .3s ease;
+    transform: translateY(-2px);
 }
 .admin-panel .icon{
     width: 20px;
@@ -109,12 +111,18 @@
     color: #BAB8B8;
     position: absolute;
     right: 53px;
-    top: 22px;
+    top: 35px;
     z-index: 1;
 }
 .admin-panel .a-count{
-    font-size: 38px;
+    /*padding-left: 10px;*/
+    font-size: 40px;
     font-weight: 700;
     /*line-height: 1.65857;*/
+}
+.admin-panel h4{
+    margin: 10px 0;
+    font-size: 18px;
+    color: #999;
 }
 /*-----------------------------------------main content css*/
