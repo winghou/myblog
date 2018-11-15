@@ -5,8 +5,8 @@
 /*-------------------------------sidebar css*/
 .sidebar-scroll{
     position: relative;
-    /*height: 100vh;*/
-    width: 232px;
+    height: 100vh;
+    width: 230px;
     overflow: hidden;
 }
 .sidebar{
@@ -55,12 +55,18 @@
 /*-----------------------------right content css*/
 .right-content{
     padding-left: 231px;
+    /*float: right;*/
 }
 /*-----------------------------right content css*/
 .nav-menu{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: calc(100% - 230px);
+    position: absolute;
+    right: 0;
+    top: 0;
+
 }
 
 .nav-menu ul{
