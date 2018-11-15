@@ -4,18 +4,18 @@
 }
 /*-------------------------------sidebar css*/
 .sidebar-scroll{
-    position: relative;
-    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    /*height: 100vh;*/
     width: 230px;
     overflow: hidden;
 }
 .sidebar{
     width: 248px;
     height: 100%;
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*bottom: 0;*/
-    /*left: 0;*/
     background-color: #20222A;/*#16181d*/
     overflow-x: hidden;
     overflow-y: scroll;
@@ -57,7 +57,7 @@
     padding-left: 231px;
     /*float: right;*/
 }
-/*-----------------------------right content css*/
+/*-----------------------------head css*/
 .nav-menu{
     display: flex;
     flex-direction: row;
@@ -83,3 +83,38 @@
 .nav-menu ul a{
     color: #000!important;
 }
+/*-----------------------------------head css*/
+/*-----------------------------------------main content css*/
+.main-content{
+    margin-top: 75px;
+    padding: 0 15px;
+}
+.admin-panel{
+    background: #fff;
+    margin: 0 0 10px 0;
+    /*height: 35px;*/
+    /*line-height: 35px;*/
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    border: 1px solid #E4E4E4;
+
+}
+.admin-panel:hover{
+    box-shadow: -10px 10px 30px -15px #9e9c9c;
+    transition: all .3s ease;
+}
+.admin-panel .icon{
+    width: 20px;
+    height: 20px;
+    color: #BAB8B8;
+    position: absolute;
+    right: 53px;
+    top: 22px;
+    z-index: 1;
+}
+.admin-panel .a-count{
+    font-size: 38px;
+    font-weight: 700;
+    /*line-height: 1.65857;*/
+}
+/*-----------------------------------------main content css*/
