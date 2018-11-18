@@ -7,10 +7,10 @@
 
     <!--<link rel="stylesheet" href="/css/index.css">-->
     <!--<script src="/plugin/layui/layui.js"></script>-->
-    <link rel="stylesheet" href="../static/plugin/layui/css/layui.css">
-    <link rel="stylesheet" href="../static/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/index.css">
-    <script src="../static/plugin/layui/layui.js"></script>
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/plugin/layui/layui.js"></script>
 
     <title>Blog小站</title>
 </head>
@@ -58,21 +58,23 @@
                     <div class="layui-carousel" id="carousel" style="height: 280px;">
                         <div carousel-item>
                             <a href="#">
-                                <img src="../static/images/item1.jpg" alt="none">
+                                <img src="/images/item1.jpg" alt="none">
                             </a>
                             <div><a href="#">
-                                <img src="../static/images/item2.jpg" alt="none">
+                                <img src="/images/item2.jpg" alt="none">
                             </a></div>
                             <div><a href="#">
-                                <img src="../static/images/item3.jpg" alt="none">
+                                <img src="/images/item3.jpg" alt="none">
                             </a></div>
                         </div>
                     </div>
                 </div>
+                <#list articles as article>
+
                 <article class="blog-article">
                     <div class="thumbnail">
                         <a href="#img">
-                            <img src="../static/images/20181024185055343.jpg" alt="none">
+                            <img src="/images/20181024185055343.jpg" alt="none">
                         </a>
                         <span class="cata"><a href="#cata">
                             Java
@@ -80,6 +82,7 @@
                     </div>
                     <div class="article-header">
                         <h1 class="layui-elip"><a href="#">
+                            ${article.title}
                             Article Header
                             Let me not to the marriage of true minds
                             Admit impediments. Love is not love
@@ -98,6 +101,7 @@
                         </a></h1>
                     </div>
                     <div class="article-content ">
+
                         Let me not to the marriage of true minds
                         Admit impediments. Love is not love
                         Which alters when it alteration finds,
@@ -140,6 +144,7 @@
                     </span>
 
                 </article>
+                </#list>
                 <div id="pagination"></div>
 
             </div>
@@ -153,7 +158,7 @@
 
                             <div class="head-photo text-center">
                                 <a href="#img">
-                                    <img src="../static/images/20181024185055343.jpg" alt="none">
+                                    <img src="/images/20181024185055343.jpg" alt="none">
                                 </a>
 
                             </div>

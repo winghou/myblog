@@ -1,6 +1,8 @@
 spring:
   freemarker:
     suffix: .ftl
+    template-loader-path: classpath:/templates/
+
   datasource:
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver

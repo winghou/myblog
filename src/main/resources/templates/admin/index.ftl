@@ -2,20 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--<link rel="stylesheet" href="/plugin/layui/css/layui.css">-->
-    <!--<link rel="stylesheet" href="/plugin/font-awesome-4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <!--<link rel="stylesheet" href="/css/index.css">-->
-    <!--<script src="/plugin/layui/layui.js"></script>-->
-    <link rel="stylesheet" href="../../static/plugin/layui/css/layui.css">
-    <link rel="stylesheet" href="../../static/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../static/css/common/common.css">
-    <link rel="stylesheet" href="../../static/css/admin/index.css">
-    <!--<link rel="stylesheet" href="../static/css/github.css">-->
-    <link rel="stylesheet" href="../../static/plugin/simpleMDE/simplemde.min.css">
-    <script src="../../static/plugin/layui/layui.js"></script>
-    <script src="../../static/plugin/marked/marked.min.js"></script>
-    <script src="../../static/plugin/simpleMDE/simplemde.min.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/admin/index.css">
+    <!--<link rel="stylesheet" href="/css/github.css">-->
+    <link rel="stylesheet" href="/plugin/simpleMDE/simplemde.min.css">
+    <script src="/plugin/layui/layui.js"></script>
+    <script src="/plugin/marked/marked.min.js"></script>
+    <script src="/plugin/simpleMDE/simplemde.min.js"></script>
 
     <title>后台管理</title>
 </head>
@@ -36,7 +33,7 @@
                         </h2>
                         <div class="admin-info display-inblock">
                             <a href="" class="dinb ml15 fl mr15 mb20 ">
-                                <img src="../../static/images/admin.png" alt="" class="layui-nav-img">
+                                <img src="/images/admin.png" alt="" class="layui-nav-img">
                             </a>
                             <p class="layui-word-aux">下午好</p>
                             <h2>小丑女</h2>

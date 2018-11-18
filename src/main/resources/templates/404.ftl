@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/plugin/layui/css/layui.css">
-    <link rel="stylesheet" href="../static/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/common/common.css">
-    <link rel="stylesheet" href="../static/css/common/header.css">
-    <link rel="stylesheet" href="../static/css/common/footer.css">
-    <script src="../static/plugin/layui/layui.js"></script>
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/common/header.css">
+    <link rel="stylesheet" href="/css/common/footer.css">
+    <script src="/plugin/layui/layui.js"></script>
 
     <title>Page Not Found</title>
 </head>
@@ -46,7 +46,7 @@
     <div class="layui-row layui-col-lg12">
 
         <div class="blog-panel tc">
-            <img src="../static/images/404.jpg" alt="none">
+            <img src="/images/404.jpg" alt="none">
         </div>
     </div>
 

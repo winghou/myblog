@@ -7,18 +7,18 @@
 
     <!--<link rel="stylesheet" href="/css/index.css">-->
     <!--<script src="/plugin/layui/layui.js"></script>-->
-    <link rel="stylesheet" href="../static/plugin/layui/css/layui.css">
-    <link rel="stylesheet" href="../static/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/common/common.css">
-    <link rel="stylesheet" href="../static/css/common/header.css">
-    <link rel="stylesheet" href="../static/css/common/footer.css">
-    <!--<link rel="stylesheet" href="../static/css/github.css">-->
-    <link rel="stylesheet" href="../static/plugin/simpleMDE/simplemde.min.css">
-    <link rel="stylesheet" href="../static/css/article.css">
-    <script src="../static/plugin/layui/layui.js"></script>
-    <script src="../static/plugin/marked/marked.min.js"></script>
-    <script src="../static/plugin/simpleMDE/simplemde.min.js"></script>
-    <!--<script src="../static/plugin/jquery.min.js"></script>-->
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/common/header.css">
+    <link rel="stylesheet" href="/css/common/footer.css">
+    <!--<link rel="stylesheet" href="/css/github.css">-->
+    <link rel="stylesheet" href="/plugin/simpleMDE/simplemde.min.css">
+    <link rel="stylesheet" href="/css/article.css">
+    <script src="/plugin/layui/layui.js"></script>
+    <script src="/plugin/marked/marked.min.js"></script>
+    <script src="/plugin/simpleMDE/simplemde.min.js"></script>
+    <!--<script src="/plugin/jquery.min.js"></script>-->
     <title>Article</title>
 
 </head>
@@ -143,7 +143,7 @@
                     <li>
                         <div class="article-hot-img ">
 
-                            <img src="../static/images/springboot.png" alt="">
+                            <img src="/images/springboot.png" alt="">
                         </div>
                         <div class="article-hot-text layui-elip">
                             <a href="#">Springboot + Freemarker项目中使用自定义注解Springboot + Freemarker项目中使用自定义注解</a>
@@ -157,7 +157,7 @@
                     <li>
                         <div class="article-hot-img">
 
-                            <img src="../static/images/springboot.png" alt="">
+                            <img src="/images/springboot.png" alt="">
                         </div>
                         <div class="article-hot-text layui-elip">
                             <a href="#">Springboot + Freemarker项目中使用自定义注解Springboot + Freemarker项目中使用自定义注解</a>
@@ -171,7 +171,7 @@
                     <li>
                         <div class="article-hot-img">
 
-                            <img src="../static/images/springboot.png" alt="">
+                            <img src="/images/springboot.png" alt="">
                         </div>
                         <div class="article-hot-text layui-elip">
                             <a href="#">Springboot + Freemarker项目中使用自定义注解Springboot + Freemarker项目中使用自定义注解</a>
@@ -185,7 +185,7 @@
                     <li>
                         <div class="article-hot-img">
 
-                            <img src="../static/images/springboot.png" alt="">
+                            <img src="/images/springboot.png" alt="">
                         </div>
                         <div class="article-hot-text layui-elip">
                             <a href="#">Springboot + Freemarker项目中使用自定义注解Springboot + Freemarker项目中使用自定义注解</a>
@@ -244,7 +244,7 @@
                     <li class="content-li">
                         <div class="comment-header">
                             <div class="user-img">
-                                <img src="../static/images/user.png" alt="">
+                                <img src="/images/user.png" alt="">
                             </div>
                             <div class="user-info">
                                 <div class="nickname">
