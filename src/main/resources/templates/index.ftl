@@ -1,50 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!--<link rel="stylesheet" href="/plugin/layui/css/layui.css">-->
-    <!--<link rel="stylesheet" href="/plugin/font-awesome-4.7.0/css/font-awesome.min.css">-->
+<#include "include/macros.ftl">
+<@header title="Blog小站">
 
-    <!--<link rel="stylesheet" href="/css/index.css">-->
-    <!--<script src="/plugin/layui/layui.js"></script>-->
-    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
-    <link rel="stylesheet" href="/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/index.css">
-    <script src="/plugin/layui/layui.js"></script>
-
-    <title>Blog小站</title>
-</head>
-<body class="layui-bg-gray">
-<header>
-    <div class="blog-header">
-        <div class="brand">
-            <h1 class=" pull-left">
-                <i class="layui-icon layui-icon-tree" style="font-size: 30px; color: #009688;"></i>
-                <a href="#home" class="brand-title">Bolg小站</a>
-            </h1>
-        </div>
-        <div class="">
-            <div class="pull-right">
-                <input id="search" type="search" class="layui-input" placeholder="搜索">
-            </div>
-
-            <ul class="layui-nav blog-nav pull-right">
-                <li class="layui-nav-item"><a href="#">主页</a></li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">文章分类 <i class="layui-icon layui-icon-triangle-d"></i></a>
-
-                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                        <dd><a href="">Spring Boot</a></dd>
-                        <dd><a href="">数据库</a></dd>
-                        <dd><a href="">Linux</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"><a href="#">留言板</a></li>
-                <li class="layui-nav-item"><a href="#">关于本站</a></li>
-            </ul>
-        </div>
-    </div>
-</header>
+</@header>
 <div class="blog-body">
     <div class="layui-container">
         <div class="blog-banner">
@@ -83,61 +41,18 @@
                     <div class="article-header">
                         <h1 class="layui-elip"><a href="#">
                             ${article.title}
-                            Article Header
-                            Let me not to the marriage of true minds
-                            Admit impediments. Love is not love
-                            Which alters when it alteration finds,
-                            Or bends with the remover to remove:
-                            O, no! it is an ever-fix`ed mark,
-                            That looks on tempests and is never shaken;
-                            It is the star to every wand'ring bark,
-                            Whose worth's unknown, although his heighth be taken.
-                            Love's not Time's fool, though rosy lips and cheeks
-                            Within his bending sickle's compass come;
-                            Love alters not with his brief hours and weeks,
-                            But bears it out even to the edge of doom:
-                            If this be error and upon me proved,
-                            I never writ, nor no man ever loved.
                         </a></h1>
                     </div>
                     <div class="article-content ">
-
-                        Let me not to the marriage of true minds
-                        Admit impediments. Love is not love
-                        Which alters when it alteration finds,
-                        Or bends with the remover to remove:
-                        O, no! it is an ever-fix`ed mark,
-                        That looks on tempests and is never shaken;
-                        It is the star to every wand'ring bark,
-                        Whose worth's unknown, although his heighth be taken.
-                        Love's not Time's fool, though rosy lips and cheeks
-                        Within his bending sickle's compass come;
-                        Love alters not with his brief hours and weeks,
-                        But bears it out even to the edge of doom:
-                        If this be error and upon me proved,
-                        I never writ, nor no man ever loved.
-                        Let me not to the marriage of true minds
-                        Admit impediments. Love is not love
-                        Which alters when it alteration finds,
-                        Or bends with the remover to remove:
-                        O, no! it is an ever-fix`ed mark,
-                        That looks on tempests and is never shaken;
-                        It is the star to every wand'ring bark,
-                        Whose worth's unknown, although his heighth be taken.
-                        Love's not Time's fool, though rosy lips and cheeks
-                        Within his bending sickle's compass come;
-                        Love alters not with his brief hours and weeks,
-                        But bears it out even to the edge of doom:
-                        If this be error and upon me proved,
-                        I never writ, nor no man ever loved.
+                        ${article.description}
                     </div>
                     <span class="article-meta">
                         <i class="layui-icon layui-icon-date"></i>
-                        <span class="inl">2018-10-29</span>&nbsp;&nbsp;
+                        <span class="inl">${article.createTime}</span>&nbsp;&nbsp;
                         <i class="fa fa-eye" aria-hidden="true"></i>
                         <span>浏览(20)</span>&nbsp;&nbsp;
                         <i class="fa fa-comments-o" aria-hidden="true"></i>
-                        <span>0</span>
+                        <span>评论(0)</span>
                     </span>
                     <span class="readArt">
                         <a href="#read" style="color: #ffffff;">阅读全文</a>
@@ -196,23 +111,10 @@
                     </div>
                     <div class="tag-body">
                         <div class="tag-content">
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">god</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
-                            <a href="#tag" class="border-gray">Java</a>
+                            <#list tags as tag>
+
+                            <a href="#tag" class="border-gray">${tag.name}</a>
+                            </#list>
                         </div>
                     </div>
 
@@ -230,18 +132,6 @@
                                 <ul class="article-list">
                                     <li>
                                         <a href="#" class="layui-elip">Java是世界上最好的语言Java是世界上最好的语言Java是世界上最好的语言</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Java是世界上最好的语言</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Java是世界上最好的语言</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Java是世界上最好的语言</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Java是世界上最好的语言</a>
                                     </li>
                                 </ul>
                             </div>
@@ -261,15 +151,15 @@
                         <ul class="info-list">
                             <li>
                                 <i class="fa fa-file"></i>&nbsp;
-                                <span>文章总数：&nbsp; 124 篇</span>
+                                <span>文章总数：&nbsp; ${articles?size} 篇</span>
                             </li>
                             <li>
                                 <i class="fa fa-tags"></i>&nbsp;
-                                <span>标签总数：&nbsp; 124 篇</span>
+                                <span>标签总数：&nbsp; ${tags?size} 篇</span>
                             </li>
                             <li>
                                 <i class="fa fa-folder-open"></i>&nbsp;
-                                <span>分类总数：&nbsp; 124 篇</span>
+                                <span>分类总数：&nbsp; ${types?size} 篇</span>
                             </li>
                             <li>
                                 <i class="fa fa-comment"></i>&nbsp;
@@ -290,22 +180,13 @@
         </div>
     </div>
 </div>
-<footer>
-    <div class="blog-panel text-center footer-info">
-
-        Copyright © 2017 风吟博客 All rights reserved.
-
-        <a href="#map">站点地图</a>
-    </div>
-</footer>
-
-
+<@footer>
 <script>
     //注意：导航 依赖 element 模块，否则无法进行功能性操作
     layui.use(['element', 'carousel', 'laypage'], function () {
         var element = layui.element
-            , carousel = layui.carousel
-            , laypage = layui.laypage;
+                , carousel = layui.carousel
+                , laypage = layui.laypage;
         carousel.render({
             elem: '#carousel',
             width: '100%',
@@ -319,5 +200,5 @@
         //…
     });
 </script>
-</body>
-</html>
+
+</@footer>

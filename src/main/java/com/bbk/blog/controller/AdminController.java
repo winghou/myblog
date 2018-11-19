@@ -1,7 +1,5 @@
 package com.bbk.blog.controller;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.bbk.blog.entity.BizArticle;
 import com.bbk.blog.entity.BizTags;
 import com.bbk.blog.entity.BizType;
@@ -17,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
-public class MainController {
+@RequestMapping(value = "/admin")
+public class AdminController {
     @Autowired
     IBizArticleService articleService;
     @Autowired
@@ -25,16 +24,10 @@ public class MainController {
     @Autowired
     IBizTypeService typeService;
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @RequestMapping(value = "",method = RequestMethod.GET)
     public String index(ModelMap map){
-        List<BizArticle> articles = articleService.list(null);
-        List<BizType> types = typeService.list(null);
-        List<BizTags> tags = tagsService.list(null);
-        map.put("articles",articles);
-        map.put("types",types);
-        map.put("tags",tags);
 
-        return "index";
+        return "admin/index";
     }
 
 }

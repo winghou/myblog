@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
-    <link rel="stylesheet" href="/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/common/footer.css">
 
-    <title></title>
-</head>
-<body>
 <footer>
     <div class="blog-panel text-center footer-info">
 
@@ -17,6 +7,12 @@
         <a href="#map">站点地图</a>
     </div>
 </footer>
-
+<script src="/plugin/layui/layui.js"></script>
+<script>
+    layui.use(['element'],function () {
+        var elem = layui.element;
+    })
+</script>
 </body>
-</html>
+
+
