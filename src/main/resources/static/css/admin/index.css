@@ -91,11 +91,11 @@
 }
 .admin-panel{
     background: #fff;
-    margin: 0 0 10px 0;
+    margin: 0;
     /*height: 35px;*/
     /*line-height: 35px;*/
     border-radius: 5px;
-    padding: 10px 0 0 20px;
+    padding: 10px;
     border: 1px solid #E4E4E4;
     display: block;
 
@@ -103,7 +103,8 @@
 .admin-panel:hover{
     box-shadow: -10px 10px 30px -15px #9e9c9c;
     transition: all .3s ease;
-    transform: translateY(-2px);
+    /*color: #299848;*/
+    /*transform: translateY(-2px);*/
 }
 .admin-panel .icon{
     width: 20px;
@@ -125,4 +126,19 @@
     font-size: 18px;
     color: #999;
 }
+.article-top li{
+    position: relative;
+    padding-left: 3px;
+}
+.article-top a{
+    display: inline-block;
+    width: 90%;
+    margin: 5px 0;
+}
+.article-top span{
+    /*display: inline-block;*/
+    position: absolute;
+    top: 7px;
+}
+
 /*-----------------------------------------main content css*/
