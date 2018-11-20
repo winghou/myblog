@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/plugin/layui/css/layui.css">
     <link rel="stylesheet" href="/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/common/header.css">
+    <link rel="stylesheet" href="/css/common/common.css">
     <link rel="stylesheet" href="/css/common/footer.css">
 
 

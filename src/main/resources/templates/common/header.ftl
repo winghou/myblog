@@ -1,4 +1,3 @@
-
 <header>
     <div class="blog-header">
         <div class="brand">
@@ -13,18 +12,41 @@
             </div>
 
             <ul class="layui-nav blog-nav pull-right">
-                <li class="layui-nav-item"><a href="#">主页</a></li>
+                <#list types?sort_by("sort") as type>
+                <#if type.pid?exists>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">文章分类 <i class="layui-icon layui-icon-triangle-d"></i></a>
+                    <#assign pid = type.id>
+                    <a href="/type/${type.id}">${type.name} <i class="layui-icon layui-icon-triangle-d"></i></a>
 
                     <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                        <dd><a href="">Spring Boot</a></dd>
-                        <dd><a href="">数据库</a></dd>
-                        <dd><a href="">Linux</a></dd>
+                        <#list types as subType>
+                            <#if subType.id == pid>
+
+                            <dd><a href="/type/${subType.id}">${subType.name}</a></dd>
+                            </#if>
+                        </#list>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="#">留言板</a></li>
-                <li class="layui-nav-item"><a href="#">关于本站</a></li>
+                <#else >
+
+                <li class="layui-nav-item">
+                    <#assign pid = type.id>
+                    <a href="/type/${type.id}">${type.name} <i class="layui-icon layui-icon-triangle-d"></i></a>
+
+                    <#list types as subType>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                            <#if subType.id == pid>
+
+                            <dd><a href="/type/${subType.id}">${subType.name}</a></dd>
+                            </#if>
+                    </dl>
+                    </#list>
+
+                </li>
+
+                </#if>
+
+                </#list>
             </ul>
         </div>
     </div>
