@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -49,7 +50,7 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("jobob");
+        gc.setAuthor("ldd");
         gc.setOpen(false);
         gc.setFileOverride(true);
         gc.setBaseResultMap(true);
@@ -69,6 +70,8 @@ public class CodeGenerator {
         PackageConfig pc = new PackageConfig();
         pc.setModuleName("");
         pc.setParent("com.bbk.blog");
+        pc.setEntity("entity");
+        pc.setMapper("mapper");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -99,13 +102,14 @@ public class CodeGenerator {
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
 //        strategy.setSuperControllerClass("com.bbk.blog.common.BaseController");
-//        strategy.setInclude(scanner("表名"));
+//        strategy.setInclude("biz_article");
         strategy.setExclude(new String[]{"test"});
 //        strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix(pc.getModuleName() + "_");
+        strategy.setTablePrefix("biz_","sys_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
+
     }
 }
