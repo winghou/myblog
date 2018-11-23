@@ -18,7 +18,7 @@ public class BlogApplicationTests {
 
     @Test
     public void contextLoads() {
-        List<Type> types = typeMapper.getTypes();
+        List<Type> types = typeMapper.selectTypesWithNodes();
         for (Type t:
              types) {
             System.out.println(t);

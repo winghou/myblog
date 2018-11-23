@@ -12,18 +12,17 @@
             </div>
 
             <ul class="layui-nav blog-nav pull-right">
-                <#list types?sort_by("sort") as type>
-                <#if type.pid?exists>
+                <#list types as type>
+                <#if type.nodes?exists && type.nodes?size != 0>
                 <li class="layui-nav-item">
                     <#assign pid = type.id>
                     <a href="/type/${type.id}">${type.name} <i class="layui-icon layui-icon-triangle-d"></i></a>
 
                     <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                        <#list types as subType>
-                            <#if subType.id == pid>
+                        <#list type.nodes as node>
 
-                            <dd><a href="/type/${subType.id}">${subType.name}</a></dd>
-                            </#if>
+
+                            <dd><a href="/type/${node.id}">${node.name}</a></dd>
                         </#list>
                     </dl>
                 </li>
@@ -31,17 +30,7 @@
 
                 <li class="layui-nav-item">
                     <#assign pid = type.id>
-                    <a href="/type/${type.id}">${type.name} <i class="layui-icon layui-icon-triangle-d"></i></a>
-
-                    <#list types as subType>
-                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                            <#if subType.id == pid>
-
-                            <dd><a href="/type/${subType.id}">${subType.name}</a></dd>
-                            </#if>
-                    </dl>
-                    </#list>
-
+                    <a href="/type/${type.id}">${type.name} </a>
                 </li>
 
                 </#if>

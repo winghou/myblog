@@ -39,7 +39,7 @@
                         </a></span>
                     </div>
                     <div class="article-header">
-                        <h1 class="layui-elip"><a href="#">
+                        <h1 class="layui-elip"><a href="/article/${article.id}">
                             ${article.title}
                         </a></h1>
                     </div>

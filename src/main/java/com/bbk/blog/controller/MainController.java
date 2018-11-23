@@ -26,7 +26,7 @@ public class MainController {
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String index(ModelMap map){
         List<Article> articles = articleService.list(null);
-        List<Type> types = typeService.list(null);
+        List<Type> types = typeService.selectTypesWithNodes();
         List<Tags> tags = tagsService.list(null);
         map.put("articles",articles);
         map.put("types",types);
