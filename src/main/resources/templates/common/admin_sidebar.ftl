@@ -29,6 +29,7 @@
                     <i class="fa fa-list"></i>&nbsp; 文章管理
                 </a>
                 <dl class="layui-nav-child">
+                    <dd><a href="/admin/article">写文章</a></dd>
                     <dd><a href="javascript:;">文章列表</a></dd>
                     <dd><a href="javascript:;">标签列表</a></dd>
                     <dd><a href="">分类列表</a></dd>

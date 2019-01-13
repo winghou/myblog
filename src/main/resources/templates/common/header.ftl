@@ -20,8 +20,6 @@
 
                     <dl class="layui-nav-child"> <!-- 二级菜单 -->
                         <#list type.nodes as node>
-
-
                             <dd><a href="/type/${node.id}">${node.name}</a></dd>
                         </#list>
                     </dl>

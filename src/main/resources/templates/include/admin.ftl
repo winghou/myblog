@@ -26,7 +26,6 @@
             <div class=" right-content">
                 <#include "../common/admin_nav.ftl">
                 <div class="layui-clear"></div>
-
                 <div class="layui-col-lg12 layui-col-space20 main-content">
 
 

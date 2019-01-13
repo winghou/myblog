@@ -1,0 +1,12 @@
+span.layui-breadcrumb a{
+    color: #009a61;
+}
+.panel{
+    background: #fff;
+    margin: 0;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #E4E4E4;
+    display: block;
+
+}

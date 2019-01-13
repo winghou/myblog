@@ -207,8 +207,22 @@
     layui.use(['element', 'jquery', 'layer'], function () {
         var elem = layui.element,
                 $ = layui.jquery;
+
         // layer.msg("hello")
+        function getContent(content) {
+            var result;
+            $.get({
+                url: '/admin/' + content,
+                success: function (res) {
+                    result = res;
+                }
+
+            });
+            return result;
+        }
+
         //基于dom ID， 初始化 echarts实例
+
         var echart_cata = echarts.init(document.getElementById('echart_cata')),
                 echart_spider = echarts.init(document.getElementById('echart_spider'));
         //指定echarts 初始化配置参数和数据
@@ -242,7 +256,6 @@
         //使用指定的配置项和数据显示图表
         echart_cata.setOption(option);
         echart_spider.setOption(option);
-
     })
 </script>
 </@footer>

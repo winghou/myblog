@@ -14,11 +14,11 @@
     <title>${title}</title>
 </head>
 <body class="layui-bg-gray">
-<#include "/common/header.ftl">
+<#include "../common/header.ftl">
 </#macro>
 
 <#macro footer>
-    <#include "/common/footer.ftl">
+    <#include "../common/footer.ftl">
     <#nested >
 </body>
 </html>

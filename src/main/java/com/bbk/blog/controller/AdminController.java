@@ -6,6 +6,7 @@ import com.bbk.blog.service.ITypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,6 +24,11 @@ public class AdminController {
     public String index(ModelMap map){
 
         return "admin/index";
+    }
+
+    @GetMapping(value = "/article")
+    public String main() {
+        return "admin/article";
     }
 
 }
