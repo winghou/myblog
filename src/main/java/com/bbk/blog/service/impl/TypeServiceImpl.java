@@ -2,12 +2,9 @@ package com.bbk.blog.service.impl;
 
 import com.bbk.blog.entity.Type;
 import com.bbk.blog.mapper.TypeMapper;
-import com.bbk.blog.service.ITypeService;
+import com.bbk.blog.service.TypeService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * <p>
@@ -15,15 +12,9 @@ import java.util.List;
  * </p>
  *
  * @author ldd
- * @since 2018-11-22
+ * @since 2019-02-16
  */
 @Service
-public class TypeServiceImpl extends ServiceImpl<TypeMapper, Type> implements ITypeService {
-    @Autowired
-    private  TypeMapper typeMapper;
+public class TypeServiceImpl extends ServiceImpl<TypeMapper, Type> implements TypeService {
 
-    @Override
-    public List<Type> selectTypesWithNodes() {
-        return typeMapper.selectTypesWithNodes();
-    }
 }

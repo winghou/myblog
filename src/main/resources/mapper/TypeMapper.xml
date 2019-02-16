@@ -4,68 +4,15 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.bbk.blog.entity.Type">
-        <id column="id" property="id"/>
-        <result column="pid" property="pid"/>
-        <result column="name" property="name"/>
-        <result column="description" property="description"/>
-        <result column="sort" property="sort"/>
-        <result column="icon" property="icon"/>
-        <result column="available" property="available"/>
-        <result column="create_time" property="createTime"/>
-        <result column="update_time" property="updateTime"/>
+        <id column="id" property="id" />
+        <result column="pid" property="pid" />
+        <result column="name" property="name" />
+        <result column="description" property="description" />
+        <result column="sort" property="sort" />
+        <result column="icon" property="icon" />
+        <result column="available" property="available" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
     </resultMap>
-    <resultMap id="withNodesMap" type="com.bbk.blog.entity.Type">
-        <id property="id" column="id"/>
-        <result property="pid" column="pid"/>
-        <result property="name" column="name"/>
-        <result property="description" column="description"/>
-        <result property="sort" column="sort"/>
-        <result property="icon" column="icon"/>
-        <result property="available" column="available"/>
-        <association property="parent" javaType="com.bbk.blog.entity.Type">
-            <id property="id" column="parent_id"/>
-            <result property="pid" column="parent_pid"/>
-            <result property="name" column="parent_name"/>
-            <result property="description" column="parent_description"/>
-            <result property="sort" column="parent_sort"/>
-            <result property="icon" column="parent_icon"/>
-            <result property="available" column="parent_available"/>
-        </association>
-
-        <collection property="nodes" ofType="com.bbk.blog.entity.Type">
-            <id property="id" column="node_id"/>
-            <result property="pid" column="node_pid"/>
-            <result property="name" column="node_name"/>
-            <result property="description" column="node_description"/>
-            <result property="sort" column="node_sort"/>
-            <result property="icon" column="node_icon"/>
-            <result property="available" column="node_available"/>
-        </collection>
-    </resultMap>
-    <select id="selectTypesWithNodes" resultMap="withNodesMap">
-        SELECT
-               t.*,
-               parent.id parent_id,
-               parent.`pid` parent_pid,
-               parent.`name` parent_name,
-               parent.description parent_description,
-               parent.available parent_available,
-               parent.icon parent_icon,
-               node.`id` node_id,
-               node.`pid` node_pid,
-               node.`name` node_name,
-               node.description node_description,
-               node.available node_available,
-               node.icon node_icon
-        FROM
-             biz_type t
-               LEFT JOIN biz_type parent ON t.pid = parent.id
-               LEFT JOIN biz_type node ON node.pid = t.id
-        WHERE
-            t.pid IS NULL OR t.pid = ''
-        ORDER BY
-                 t.sort ASC;
-    </select>
-
 
 </mapper>

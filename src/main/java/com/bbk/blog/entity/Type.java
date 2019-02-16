@@ -5,8 +5,6 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
-import java.util.List;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -17,7 +15,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author ldd
- * @since 2018-11-22
+ * @since 2019-02-16
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -66,13 +64,6 @@ public class Type implements Serializable {
      * 更新时间
      */
     private LocalDateTime updateTime;
-    /**
-     * 子节点
-     */
-    private List<Type> nodes;
-    /**
-     * 父 Type
-     */
-    private Type parent;
+
 
 }

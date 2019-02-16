@@ -2,7 +2,7 @@ package com.bbk.blog.service.impl;
 
 import com.bbk.blog.entity.ArticleLook;
 import com.bbk.blog.mapper.ArticleLookMapper;
-import com.bbk.blog.service.IArticleLookService;
+import com.bbk.blog.service.ArticleLookService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author ldd
- * @since 2018-11-22
+ * @since 2019-02-16
  */
 @Service
-public class ArticleLookServiceImpl extends ServiceImpl<ArticleLookMapper, ArticleLook> implements IArticleLookService {
+public class ArticleLookServiceImpl extends ServiceImpl<ArticleLookMapper, ArticleLook> implements ArticleLookService {
 
 }

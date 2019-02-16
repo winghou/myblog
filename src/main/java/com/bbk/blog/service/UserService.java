@@ -1,6 +1,6 @@
 package com.bbk.blog.service;
 
-import com.bbk.blog.entity.ArticleLook;
+import com.bbk.blog.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author ldd
- * @since 2018-11-22
+ * @since 2019-02-16
  */
-public interface IArticleLookService extends IService<ArticleLook> {
+public interface UserService extends IService<User> {
 
 }

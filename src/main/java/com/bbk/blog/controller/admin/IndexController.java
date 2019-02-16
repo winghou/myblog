@@ -1,8 +1,8 @@
 package com.bbk.blog.controller.admin;
 
-import com.bbk.blog.service.IArticleService;
-import com.bbk.blog.service.ITagsService;
-import com.bbk.blog.service.ITypeService;
+import com.bbk.blog.service.ArticleService;
+import com.bbk.blog.service.TagsService;
+import com.bbk.blog.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/admin")
 public class IndexController {
     @Autowired
-    IArticleService articleService;
+    ArticleService articleService;
     @Autowired
-    ITagsService tagsService;
+    TagsService tagsService;
     @Autowired
-    ITypeService typeService;
+    TypeService typeService;
 
     @RequestMapping(value = "",method = RequestMethod.GET)
     public String index(ModelMap map){

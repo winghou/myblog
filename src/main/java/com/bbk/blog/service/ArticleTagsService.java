@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author ldd
- * @since 2018-11-22
+ * @since 2019-02-16
  */
-public interface IArticleTagsService extends IService<ArticleTags> {
+public interface ArticleTagsService extends IService<ArticleTags> {
 
 }

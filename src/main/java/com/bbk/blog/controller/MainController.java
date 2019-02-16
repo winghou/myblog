@@ -3,9 +3,9 @@ package com.bbk.blog.controller;
 import com.bbk.blog.entity.Article;
 import com.bbk.blog.entity.Tags;
 import com.bbk.blog.entity.Type;
-import com.bbk.blog.service.IArticleService;
-import com.bbk.blog.service.ITagsService;
-import com.bbk.blog.service.ITypeService;
+import com.bbk.blog.service.ArticleService;
+import com.bbk.blog.service.TagsService;
+import com.bbk.blog.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,11 +17,11 @@ import java.util.List;
 @Controller
 public class MainController {
     @Autowired
-    IArticleService articleService;
+    ArticleService articleService;
     @Autowired
-    ITagsService tagsService;
+    TagsService tagsService;
     @Autowired
-    ITypeService typeService;
+    TypeService typeService;
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String index(ModelMap map){
