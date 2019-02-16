@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="/css/admin/index.css">
     <#nested >
 <#--<link rel="stylesheet" href="/plugin/simpleMDE/simplemde.min.css">-->
-    <script src="/plugin/layui/layui.js"></script>
-    <script src="/plugin/marked/marked.min.js"></script>
-    <script src="/plugin/simpleMDE/simplemde.min.js"></script>
-    <script src="/plugin/echarts.js"></script>
 
     <title>${title}</title>
 </head>
@@ -36,6 +32,11 @@
 <#macro footer>
 </div>
 <#include "../common/admin_footer.ftl">
+    <script src="/plugin/layui/layui.js"></script>
+    <script src="/plugin/marked/marked.min.js"></script>
+    <script src="/plugin/simpleMDE/simplemde.min.js"></script>
+    <script src="/plugin/echarts.js"></script>
+
 <#nested>
 </body>
 </html>

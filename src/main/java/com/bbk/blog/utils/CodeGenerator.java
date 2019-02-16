@@ -54,6 +54,7 @@ public class CodeGenerator {
         gc.setOpen(false);
         gc.setFileOverride(true);
         gc.setBaseResultMap(true);
+        gc.setServiceName("%sService");
 
         mpg.setGlobalConfig(gc);
 

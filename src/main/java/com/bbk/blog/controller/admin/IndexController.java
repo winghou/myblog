@@ -1,4 +1,4 @@
-package com.bbk.blog.controller;
+package com.bbk.blog.controller.admin;
 
 import com.bbk.blog.service.IArticleService;
 import com.bbk.blog.service.ITagsService;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping(value = "/admin")
-public class AdminController {
+public class IndexController {
     @Autowired
     IArticleService articleService;
     @Autowired
