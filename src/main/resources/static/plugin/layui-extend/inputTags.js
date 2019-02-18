@@ -82,7 +82,7 @@ layui.define(['jquery','layer'],function(exports){
     that.enter()
   };
 
-  // 回车生成标签
+  // 空格生成标签
   Class.prototype.enter = function(){
     var that = this
     ,spans = ''
@@ -90,7 +90,7 @@ layui.define(['jquery','layer'],function(exports){
     options.elem.focus();
     options.elem.keypress(function(event){  
       var keynum = (event.keyCode ? event.keyCode : event.which);  
-      if(keynum == '13'){  
+      if(keynum == '32'){
         var $val = options.elem.val().trim();
         if(!$val) return false;
         if(options.content.indexOf($val) == -1){

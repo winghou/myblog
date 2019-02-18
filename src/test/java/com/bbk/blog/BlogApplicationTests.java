@@ -2,6 +2,7 @@ package com.bbk.blog;
 
 import com.bbk.blog.entity.Type;
 import com.bbk.blog.mapper.TypeMapper;
+import com.bbk.blog.service.TypeService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +15,11 @@ import java.util.List;
 @SpringBootTest
 public class BlogApplicationTests {
     @Autowired
-    TypeMapper typeMapper;
+    TypeService typeService;
 
     @Test
     public void contextLoads() {
-        List<Type> types = typeMapper.selectTypesWithNodes();
+        List<Type> types = typeService.selectTypesWithNodes();
         for (Type t:
              types) {
             System.out.println(t);

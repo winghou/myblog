@@ -3,7 +3,8 @@
 
     <link rel="stylesheet" href="/css/admin/article.css">
     <link rel="stylesheet" href="/plugin/simpleMDE/simplemde.min.css">
-    <#--<link rel="stylesheet" href="/plugin/inputtags/inputTags.css">-->
+    <link rel="stylesheet" href="/plugin/layui-extend/css/formSelects-v4.css">
+<#--<link rel="stylesheet" href="/plugin/inputtags/inputTags.css">-->
 
 </@header>
 <div class="panel">
@@ -21,13 +22,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">分类</label>
                 <div class="layui-input-block">
-                    <select name="cata"  >
-                        <option value=""></option>
-                        <option value="0">北京</option>
-                        <option value="1">上海</option>
-                        <option value="2">广州</option>
-                        <option value="3">深圳</option>
-                        <option value="4">杭州</option>
+                    <select name="cata" xm-select="cata">
+
                     </select>
                 </div>
             </div>
@@ -37,7 +33,7 @@
                 <label class="layui-form-label">标签</label>
                 <div class="layui-input-block">
                     <div class="tags" id="tags">
-                        <input type="text" name="" id="inputTags" placeholder="回车生成标签" autocomplete="off">
+                        <input type="text" name="" id="inputTags" placeholder="空格生成标签" autocomplete="off">
                     </div>
                 </div>
             </div>
@@ -47,7 +43,7 @@
         <div class="layui-btn-container tr mt10">
             <button class="layui-btn layui-btn-primary">取消</button>
             <button class="layui-btn layui-btn-warm">存草稿</button>
-            <button class="layui-btn">发布</button>
+            <button lay-submit class="layui-btn">发布</button>
         </div>
     </form>
 
@@ -55,13 +51,13 @@
 </div>
 
 <@footer>
-<script src="/plugin/layui-extend/formSelects-v3.js"></script>
+<script src="/plugin/layui-extend/formSelects.js"></script>
 <script src="/plugin/simpleMDE/simplemde.min.js"></script>
 <script>
     layui.config({
-        base:'/plugin/layui-extend/'
+                base: '/plugin/layui-extend/'
             }
-    ).use(['element','jquery','form','inputTags','formSelects'], function () {
+    ).use(['element', 'jquery', 'form', 'inputTags', 'formSelects'], function () {
         var elem = layui.element;
         var $ = layui.jquery;
         var form = layui.form;
@@ -80,24 +76,50 @@
             }
 
         });
-        fromSelects.render({
-           name:'cata',
-           type: 1,
-            skin: 'primary',
-            on: function (data, arr) {
-                console.log(data);
-                console.log(arr);
-            },
-            data:{
-               arr:
-            }
+        var arr = [];
 
+        function getCataArr() {
+            $.get({
+                url: '/admin/catalog/all',
+                success: function (data) {
+                    console.log(data);
+                    $.each(data,function (i, value) {
+                        var obj = new Object();
+                        obj.name = value.name;
+                        obj.value = value.id;
+                        // obj.selected = "";
+                        // obj.disabled = "";
+                        arr.push(obj);
+                    });
+                }
+            });
+            return arr;
+        };
+        getCataArr();
+        console.log(arr);
+        formSelects.data('cata','server',{
+            url:'/admin/catalog/all'
         });
+        // formSelects.render({
+        //     name: 'cata',
+        //     type: 1,
+        //     skin: 'primary',
+        //     on: function (data, arr) {
+        //         console.log(data);
+        //         console.log(arr);
+        //     },
+        //     data: {
+        //         arr: getCataArr(),
+        //         name: 'name',//定义name的key, 默认name
+        //         val: 'id'//定义val的key, 默认val
+        //     }
+        //
+        // });
         inputTags.render({
-            elem:'#inputTags',//定义输入框input对象
+            elem: '#inputTags',//定义输入框input对象
             content: [],//默认标签
             aldaBtn: false,//是否开启获取所有数据的按钮
-            done: function(value){ //回车后的回调
+            done: function (value) { //回车后的回调
                 console.log(value)
             }
         });
