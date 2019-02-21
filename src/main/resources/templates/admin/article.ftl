@@ -10,7 +10,7 @@
 <div class="panel">
     <h2>发布文章</h2>
     <hr>
-    <form action="" class="layui-form">
+    <form action="/article/publish" class="layui-form">
         <div class="layui-form-item">
             <label class="layui-form-label">文章标题</label>
             <div class="layui-input-block">
@@ -33,13 +33,13 @@
                 <label class="layui-form-label">标签</label>
                 <div class="layui-input-block">
                     <div class="tags" id="tags">
-                        <input type="text" name="" id="inputTags" placeholder="空格生成标签" autocomplete="off">
+                        <input type="text" name="tags" id="inputTags" placeholder="空格生成标签" autocomplete="off">
                     </div>
                 </div>
             </div>
         </div>
         <div class="layui-clear"></div>
-        <textarea id="write_article" cols="30" rows="50"></textarea>
+        <textarea id="write_article" cols="30" rows="50" name="content"></textarea>
         <div class="layui-btn-container tr mt10">
             <button class="layui-btn layui-btn-primary">取消</button>
             <button class="layui-btn layui-btn-warm">存草稿</button>
