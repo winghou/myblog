@@ -22,7 +22,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">分类</label>
                 <div class="layui-input-block">
-                    <select name="cata" xm-select="cata">
+                    <select name="type" id="article_type" lay-filter="article_type_select">
 
                     </select>
                 </div>
@@ -32,9 +32,13 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">标签</label>
                 <div class="layui-input-block">
-                    <div class="tags" id="tags">
-                        <input type="text" name="tags" id="inputTags" placeholder="空格生成标签" autocomplete="off">
-                    </div>
+                    <select name="tags" xm-select="tags">
+
+                    </select>
+
+                <#--<div class="tags" id="tags">-->
+                <#--<input type="text" name="tags" id="inputTags" placeholder="空格生成标签" autocomplete="off">-->
+                <#--</div>-->
                 </div>
             </div>
         </div>
@@ -54,6 +58,15 @@
 <script src="/plugin/layui-extend/formSelects.js"></script>
 <script src="/plugin/simpleMDE/simplemde.min.js"></script>
 <script>
+    function createOption($, $form, data, form, id) {
+        var html = '';
+        for (var i = 0; i < data.length; i++) {
+            html += '<option value=' + data[i].id + '>' + data[i].name + '</option>';
+        }
+        $form.find('select[name=roleID]').append(html);
+        form.render();
+    }
+
     layui.config({
                 base: '/plugin/layui-extend/'
             }
@@ -61,7 +74,7 @@
         var elem = layui.element;
         var $ = layui.jquery;
         var form = layui.form;
-        var inputTags = layui.inputTags;
+        // var inputTags = layui.inputTags;
         var formSelects = layui.formSelects;
 
         var simplemde = new SimpleMDE({
@@ -73,58 +86,51 @@
             autoSave: {
                 enabled: true,
                 uniqueId: "demo",
-                delay: 1000,
+                delay: 1000
             }
 
         });
-        var arr = [];
+        formSelects.data('tags', 'server', {
+            url: '/tag/all'
+        });
+        var temp = [];
 
-        function getCataArr() {
+        function getArticleType() {
             $.get({
-                url: '/admin/catalog/all',
-                success: function (data) {
-                    console.log(data);
-                    $.each(data,function (i, value) {
-                        var obj = new Object();
-                        obj.name = value.name;
-                        obj.value = value.id;
-                        // obj.selected = "";
-                        // obj.disabled = "";
-                        arr.push(obj);
-                    });
+                url: '/type/all',
+                success: function (res) {
+                    // console.log(JSON.stringify(res));
+
+                    return res;
+                },
+                error: function () {
+                    alert("get article type failed");
                 }
             });
-            return arr;
-        };
-        getCataArr();
-        console.log(arr);
-        formSelects.data('cata','server',{
-            url:'/admin/catalog/all'
-        });
-        var tags;
-        inputTags.render({
-            elem: '#inputTags',//定义输入框input对象
-            content: [],//默认标签
-            aldaBtn: false,//是否开启获取所有数据的按钮
-            done: function (value) { //回车后的回调
-                tags +=value+',';
-            }
-        });
-        form.on('submit(publish)',function (data) {
+        }
+
+        var typesList = getArticleType();
+        if (typesList == undefined) {
+            typesList = getArticleType();
+            createOption($, $('form'), typesList, form, 'type');
+        }
+        console.log(JSON.stringify(typesList));
+        //表单提交
+        form.on('submit(publish)', function (data) {
             data.field.tags = tags;
             data.field.content = simplemde.value();
             $.ajax({
-                url:'/article/publish',
-                type:'POST',
-                dataType:'json',
-                data:data.field,
-                success:function (res) {
+                url: '/article/publish',
+                type: 'POST',
+                dataType: 'json',
+                data: data.field,
+                success: function (res) {
                     console.log(JSON.stringify(res));
                 }
 
             });
             return false;
-        })
+        });
     })
 </script>
 </@footer>

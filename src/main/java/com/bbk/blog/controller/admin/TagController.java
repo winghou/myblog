@@ -1,7 +1,8 @@
 package com.bbk.blog.controller.admin;
 
+import com.bbk.blog.entity.Tag;
 import com.bbk.blog.entity.Type;
-import com.bbk.blog.service.TypeService;
+import com.bbk.blog.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,25 +15,25 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author ldd
- * @desc
- * @create 2019-02-16 21:34
- **/
+ * @Auther: mingweilin
+ * @Date: 2019/2/22 19:23
+ * @Description:
+ */
 @Controller
-@RequestMapping(value = "/admin/catalog")
-public class CatalogController {
+@RequestMapping(value = "/tag")
+public class TagController {
     @Autowired
-    TypeService typeService;
+    TagService tagService;
 
-    @GetMapping(value = "/all")
+    @GetMapping("/all")
     @ResponseBody
-    List<Map<String,String>> getCatas() {
-        List<Type> types = typeService.list(null);
+    public List<Map<String,String>> all() {
+        List<Tag> tags = tagService.list(null);
         List<Map<String,String>> selectData = new ArrayList<>();
-        for (Type type : types) {
+        for (Tag tag : tags) {
             Map<String, String> map = new HashMap<>();
-            map.put("name",type.getName());
-            map.put("value",type.getId().toString());
+            map.put("name",tag.getName());
+            map.put("value",tag.getId().toString());
             map.put("selected","");
             map.put("disabled","");
             selectData.add(map);
@@ -40,5 +41,4 @@ public class CatalogController {
         return selectData;
 
     }
-
 }
