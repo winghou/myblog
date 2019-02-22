@@ -1,6 +1,6 @@
 package com.bbk.blog.mapper;
 
-import com.bbk.blog.entity.ArticleLove;
+import com.bbk.blog.entity.ArticleTag;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author ldd
- * @since 2019-02-16
+ * @since 2019-02-22
  */
-public interface ArticleLoveMapper extends BaseMapper<ArticleLove> {
+public interface ArticleTagMapper extends BaseMapper<ArticleTag> {
 
 }

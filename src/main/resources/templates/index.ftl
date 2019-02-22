@@ -44,7 +44,7 @@
                         </a></h1>
                     </div>
                     <div class="article-content ">
-                        ${article.description}
+                        ${article.title}
                     </div>
                     <span class="article-meta">
                         <i class="layui-icon layui-icon-date"></i>

@@ -6,7 +6,10 @@ import com.bbk.blog.service.TypeService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -14,7 +17,7 @@ import java.util.*;
  * </p>
  *
  * @author ldd
- * @since 2019-02-16
+ * @since 2019-02-22
  */
 @Service
 public class TypeServiceImpl extends ServiceImpl<TypeMapper, Type> implements TypeService {

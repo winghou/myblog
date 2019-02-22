@@ -29,9 +29,13 @@ public class ArticleController {
                                     @RequestParam("content") String content_md
                                     ) {
         Article article = new Article();
-        article.setContentMd(content_md);
+//        article.setContentMd(content_md);
         article.setTitle(title);
-        article.setTypeId(type);
+        System.out.println("title:"+title);
+        System.out.println("cata:"+type);
+        System.out.println("tags:"+tags);
+        System.out.println("content:"+content_md);
+        return new ResultMsg("success");
 
     }
 }

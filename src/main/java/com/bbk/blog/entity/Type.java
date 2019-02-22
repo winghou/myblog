@@ -1,8 +1,7 @@
 package com.bbk.blog.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
@@ -18,12 +17,11 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author ldd
- * @since 2019-02-16
+ * @since 2019-02-22
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("biz_type")
 public class Type implements Serializable {
 
     private static final long serialVersionUID = 1L;

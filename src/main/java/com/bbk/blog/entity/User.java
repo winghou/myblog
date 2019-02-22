@@ -1,6 +1,5 @@
 package com.bbk.blog.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDate;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -16,12 +15,11 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author ldd
- * @since 2019-02-16
+ * @since 2019-02-22
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("sys_user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -77,51 +75,6 @@ public class User implements Serializable {
     private String userType;
 
     /**
-     * 公司
-     */
-    private String company;
-
-    /**
-     * 个人博客地址
-     */
-    private String blog;
-
-    /**
-     * 地址
-     */
-    private String location;
-
-    /**
-     * 用户来源(默认ZHYD=本网站注册用户)
-     */
-    private String source;
-
-    /**
-     * 隐私（1：公开，0：不公开）
-     */
-    private Integer privacy;
-
-    /**
-     * 通知：(1：通知显示消息详情，2：通知不显示详情)
-     */
-    private Integer notification;
-
-    /**
-     * 金币值
-     */
-    private Integer score;
-
-    /**
-     * 经验值
-     */
-    private Integer experience;
-
-    /**
-     * 注册IP
-     */
-    private String regIp;
-
-    /**
      * 最近登录IP
      */
     private String lastLoginIp;
@@ -135,11 +88,6 @@ public class User implements Serializable {
      * 登录次数
      */
     private Integer loginCount;
-
-    /**
-     * 用户备注
-     */
-    private String remark;
 
     /**
      * 用户状态

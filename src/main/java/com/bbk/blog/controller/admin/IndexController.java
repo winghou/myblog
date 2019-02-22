@@ -1,7 +1,7 @@
 package com.bbk.blog.controller.admin;
 
 import com.bbk.blog.service.ArticleService;
-import com.bbk.blog.service.TagsService;
+import com.bbk.blog.service.TagService;
 import com.bbk.blog.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ public class IndexController {
     @Autowired
     ArticleService articleService;
     @Autowired
-    TagsService tagsService;
+    TagService tagService;
     @Autowired
     TypeService typeService;
 

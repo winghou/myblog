@@ -41,9 +41,9 @@
         <div class="layui-clear"></div>
         <textarea id="write_article" cols="30" rows="50" name="content"></textarea>
         <div class="layui-btn-container tr mt10">
-            <button class="layui-btn layui-btn-primary">取消</button>
-            <button class="layui-btn layui-btn-warm">存草稿</button>
-            <button lay-submit class="layui-btn">发布</button>
+            <button class="layui-btn layui-btn-primary" lay-filter="cancle">取消</button>
+            <button class="layui-btn layui-btn-warm" lay-filter="caogao">存草稿</button>
+            <button lay-submit class="layui-btn" lay-filter="publish">发布</button>
         </div>
     </form>
 
@@ -63,13 +63,14 @@
         var form = layui.form;
         var inputTags = layui.inputTags;
         var formSelects = layui.formSelects;
+
         var simplemde = new SimpleMDE({
             element: document.getElementById('write_article'),
             spellChecker: false,
             autoDownloadFontAwesome: false,
             status: false,
             placeholder: "Type here...",
-            autosave: {
+            autoSave: {
                 enabled: true,
                 uniqueId: "demo",
                 delay: 1000,
@@ -100,29 +101,30 @@
         formSelects.data('cata','server',{
             url:'/admin/catalog/all'
         });
-        // formSelects.render({
-        //     name: 'cata',
-        //     type: 1,
-        //     skin: 'primary',
-        //     on: function (data, arr) {
-        //         console.log(data);
-        //         console.log(arr);
-        //     },
-        //     data: {
-        //         arr: getCataArr(),
-        //         name: 'name',//定义name的key, 默认name
-        //         val: 'id'//定义val的key, 默认val
-        //     }
-        //
-        // });
+        var tags;
         inputTags.render({
             elem: '#inputTags',//定义输入框input对象
             content: [],//默认标签
             aldaBtn: false,//是否开启获取所有数据的按钮
             done: function (value) { //回车后的回调
-                console.log(value)
+                tags +=value+',';
             }
         });
+        form.on('submit(publish)',function (data) {
+            data.field.tags = tags;
+            data.field.content = simplemde.value();
+            $.ajax({
+                url:'/article/publish',
+                type:'POST',
+                dataType:'json',
+                data:data.field,
+                success:function (res) {
+                    console.log(JSON.stringify(res));
+                }
+
+            });
+            return false;
+        })
     })
 </script>
 </@footer>

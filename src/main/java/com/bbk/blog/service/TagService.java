@@ -1,6 +1,6 @@
 package com.bbk.blog.service;
 
-import com.bbk.blog.entity.RoleResources;
+import com.bbk.blog.entity.Tag;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author ldd
- * @since 2019-02-16
+ * @since 2019-02-22
  */
-public interface RoleResourcesService extends IService<RoleResources> {
+public interface TagService extends IService<Tag> {
 
 }

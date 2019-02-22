@@ -11,9 +11,10 @@ import java.util.List;
  * </p>
  *
  * @author ldd
- * @since 2019-02-16
+ * @since 2019-02-22
  */
 public interface TypeService extends IService<Type> {
 
     List<Type> selectTypesWithNodes();
+
 }

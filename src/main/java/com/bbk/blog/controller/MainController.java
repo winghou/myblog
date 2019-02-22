@@ -1,10 +1,10 @@
 package com.bbk.blog.controller;
 
 import com.bbk.blog.entity.Article;
-import com.bbk.blog.entity.Tags;
+import com.bbk.blog.entity.Tag;
 import com.bbk.blog.entity.Type;
 import com.bbk.blog.service.ArticleService;
-import com.bbk.blog.service.TagsService;
+import com.bbk.blog.service.TagService;
 import com.bbk.blog.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ public class MainController {
     @Autowired
     ArticleService articleService;
     @Autowired
-    TagsService tagsService;
+    TagService tagService;
     @Autowired
     TypeService typeService;
 
@@ -27,7 +27,7 @@ public class MainController {
     public String index(ModelMap map){
         List<Article> articles = articleService.list(null);
         List<Type> types = typeService.selectTypesWithNodes();
-        List<Tags> tags = tagsService.list(null);
+        List<Tag> tags = tagService.list(null);
         map.put("articles",articles);
         map.put("types",types);
         map.put("tags",tags);
