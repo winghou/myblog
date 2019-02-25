@@ -12,13 +12,16 @@ public class ResultMsg<T> {
     private String msg;
     private T data;
 
-    public ResultMsg failed(String msg) {
+    public static ResultMsg failed(String msg) {
+        return new ResultMsg(CODE_FAILED,msg);
+    }
+    public static ResultMsg failed() {
         return new ResultMsg(CODE_FAILED);
     }
-    public ResultMsg success(Object data) {
+    public static ResultMsg success(Object data) {
         return new ResultMsg(CODE_SUCCESS,data);
     }
-    public ResultMsg success() {
+    public static ResultMsg success() {
         return new ResultMsg(CODE_SUCCESS);
     }
     public ResultMsg(String code) {

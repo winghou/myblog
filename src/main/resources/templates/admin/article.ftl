@@ -10,7 +10,7 @@
 <div class="panel">
     <h2>发布文章</h2>
     <hr>
-    <form action="/article/publish" class="layui-form">
+    <form class="layui-form" id="articleForm" onsubmit="return false">
         <div class="layui-form-item">
             <label class="layui-form-label">文章标题</label>
             <div class="layui-input-block">
@@ -22,7 +22,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">分类</label>
                 <div class="layui-input-block">
-                    <select name="type" id="article_type" lay-filter="article_type_select">
+                    <select name="type" id="article_type">
 
                     </select>
                 </div>
@@ -32,13 +32,9 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">标签</label>
                 <div class="layui-input-block">
-                    <select name="tags" xm-select="tags">
+                    <select name="tags" xm-select="tags" xm-select-search>
 
                     </select>
-
-                <#--<div class="tags" id="tags">-->
-                <#--<input type="text" name="tags" id="inputTags" placeholder="空格生成标签" autocomplete="off">-->
-                <#--</div>-->
                 </div>
             </div>
         </div>
@@ -46,7 +42,7 @@
         <textarea id="write_article" cols="30" rows="50" name="content"></textarea>
         <div class="layui-btn-container tr mt10">
             <button class="layui-btn layui-btn-primary" lay-filter="cancle">取消</button>
-            <button class="layui-btn layui-btn-warm" lay-filter="caogao">存草稿</button>
+            <button class="layui-btn layui-btn-warm" lay-filter="draft">存草稿</button>
             <button lay-submit class="layui-btn" lay-filter="publish">发布</button>
         </div>
     </form>
@@ -58,24 +54,15 @@
 <script src="/plugin/layui-extend/formSelects.js"></script>
 <script src="/plugin/simpleMDE/simplemde.min.js"></script>
 <script>
-    function createOption($, $form, data, form, id) {
-        var html = '';
-        for (var i = 0; i < data.length; i++) {
-            html += '<option value=' + data[i].id + '>' + data[i].name + '</option>';
-        }
-        $form.find('select[name=roleID]').append(html);
-        form.render();
-    }
-
     layui.config({
                 base: '/plugin/layui-extend/'
             }
-    ).use(['element', 'jquery', 'form', 'inputTags', 'formSelects'], function () {
+    ).use(['element', 'jquery', 'form', 'inputTags', 'formSelects', 'layer'], function () {
         var elem = layui.element;
         var $ = layui.jquery;
         var form = layui.form;
-        // var inputTags = layui.inputTags;
         var formSelects = layui.formSelects;
+        var layer = layui.layer;
 
         var simplemde = new SimpleMDE({
             element: document.getElementById('write_article'),
@@ -93,44 +80,59 @@
         formSelects.data('tags', 'server', {
             url: '/tag/all'
         });
-        var temp = [];
-
-        function getArticleType() {
-            $.get({
-                url: '/type/all',
-                success: function (res) {
-                    // console.log(JSON.stringify(res));
-
-                    return res;
-                },
-                error: function () {
-                    alert("get article type failed");
+        $.get({
+            url: '/type/all',
+            success: function (res) {
+                var html = '';
+                for (var i = 0; i < res.length; i++) {
+                    html += '<option value=' + res[i].id + '>' + res[i].name + '</option>';
                 }
-            });
-        }
+                $('#articleForm').find('select[name=type]').append(html);
+                form.render();
+            }
+        });
 
-        var typesList = getArticleType();
-        if (typesList == undefined) {
-            typesList = getArticleType();
-            createOption($, $('form'), typesList, form, 'type');
-        }
-        console.log(JSON.stringify(typesList));
-        //表单提交
-        form.on('submit(publish)', function (data) {
-            data.field.tags = tags;
+        function submitForm(data, status) {
+            var tags = formSelects.value('tags', 'all');
+            var tagIDs = '';
+            for (var i = 0; i < tags.length; i++) {
+                tagIDs += tags[i].value + ',';
+            }
+            data.field.tags = tagIDs;
             data.field.content = simplemde.value();
+            data.field.status = status;
+            console.log(data.field);
             $.ajax({
                 url: '/article/publish',
                 type: 'POST',
                 dataType: 'json',
                 data: data.field,
                 success: function (res) {
+                    if (res.code = 'succss') {
+                        layer.alert('文章发表成功',function (index) {
+                            $('form').find()
+                            layer.close(index);
+                        })
+
+                    } else {
+                        layer.msg('文章发布失败，请重试');
+                    }
                     console.log(JSON.stringify(res));
                 }
 
             });
             return false;
+        }
+
+        //表单提交
+        form.on('submit(publish)', function (data) {
+            submitForm(data, 1);
         });
-    })
+        form.on('submit(draft)', function (data) {
+            submitForm(data, 0);
+        });
+
+    });
+
 </script>
 </@footer>
